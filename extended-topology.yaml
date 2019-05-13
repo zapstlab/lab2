@@ -1,0 +1,34 @@
+tosca_definitions_version: cloudify_dsl_1_3
+
+imports:
+  - http://www.getcloudify.org/spec/cloudify/4.6/types.yaml
+  - types/types.yaml
+
+node_templates:
+
+  vRouter-1:
+    type: cloudify.nodes.vRouter
+    relationships:
+      - type: cloudify.relationships.rtr_connected_to_network
+        target: PublicNetwork
+
+  vAPP-Server-1:
+    type: cloudify.nodes.vAS
+    relationships:
+      - type: cloudify.relationships.rtr_connected_to_network
+        target: PublicNetwork
+
+  vAPP-1-1:
+    type: cloudify.nodes.vApplication
+    relationships:
+      - type: cloudify.relationships.app_contained_in_as
+        target: vAPP-Server-1
+
+  vAPP-1-2:
+    type: cloudify.nodes.vApplication
+    relationships:
+      - type: cloudify.relationships.app_contained_in_as
+        target: vAPP-Server-1
+
+  PublicNetwork:
+    type: cloudify.nodes.Net
