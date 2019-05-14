@@ -118,6 +118,7 @@ W tym kroku utworzymy podstawową topologię
 vRouter-1 <-> PublicNetwork
 
 Zapoznaj się z Blueprintem, węzłami TOSCA dla deploymentu, węzłami TOSCA dla utworzonej instalacji oraz ze zdarzeniami wygenerowanymi podczas procesu instalacji. Zwróć uwagę w jakiej kolejności wykonywane są operacje zmiany cyklu życia węzłów oraz relacji między nimi.
+
 ```
 cfy blueprint upload -b topology ./simple-topology.yaml
 cfy deployment create topology-example -b topology
@@ -135,17 +136,18 @@ W tym kroku utworzymy rozszerzoną topologię
 
 vRouter-1 <-> PublicNetwork <-> vAPP-Server-1 [vAPP-1-1, vAPP-1-2]
 
-Topologia ta będzie utworzona w Cloudify poprzez modyfikacje poprzedniego Deploymentu. 
-Na podstawie zdarzeń wykonania operacji aktualizacji deploymentu prześledź poszczególne kroki jego realizacji
+Topologia ta będzie utworzona w Cloudify poprzez zmodyfikowanie poprzedniego Deploymentu na podstawie nowego Blueprintu. 
+Na podstawie zdarzeń wykonania operacji aktualizacji deploymentu prześledź poszczególne kroki jego realizacji. Uruchomienie aktualizacji:
+
 ```
 cfy deployments update topology-example -p ./extended-topology.yaml
 ```
 
-Zweryfikuj ponownie listę węzłów oraz ich instancji. W jaki sposób deployment ten różni się od poprzedniego - skomentuj krótko te różnice? Przesledź w zdarzeniach kolejność wykonywanych operacji na węzłach deploymentu podczas jego odinstalowania i ponownej instalacji (wykonaj tę sekwencję operacji/workflowów w ramach ćwiczenia).
+Zweryfikuj ponownie listę węzłów oraz ich instancji. W jaki sposób deployment ten różni się od poprzedniego? - skomentuj krótko te różnice. Przesledź w zdarzeniach kolejność wykonywanych operacji na węzłach deploymentu podczas jego odinstalowania i ponownej instalacji (wykonaj tę sekwencję operacji/workflow-ów w ramach ćwiczenia).
 
 ### KROK 3: Utwórz docelową wersję topologii
 
-W tym kroku utworzymy końcową wersję topologii. W tym celu samodzielnie przygotuj Blueprint final-topology.yaml, który posłuży do utworzenia następującej topologii:
+W tym kroku utworzymy końcową wersję topologii. W tym celu samodzielnie przygotuj Blueprint o nazwie np. final-topology.yaml, który posłuży do utworzenia następującej topologii:
 
 ```
 vRouter-1 <-> PublicNetwork <-> vLoadBalancer <-> InternalNetwork <-> vRouter-2 <-> ServiceNetwork: 
@@ -156,8 +158,11 @@ bezpośredniej relacji TOSCA typu "connected_to" z ostatnim elementem linii z dw
 serwery 1, 2 są dołączone do ServiceNetwork)
 ```
 
-Podpobnie jak poprzednio, utwórz tę docelową topologię aplikując nowy Blueprint do już istniejącego Deploymentu (uzyskanego w kroku 2). Zwróć uwagę na zmieniony sposób przekazania blueprintu do polecenia update. Sprawdź eksperymentalnie dlaczego poprzedni sposób by nie zadziałał; w celu ustalenia przyczyn warto przejrzeć 
+Podpobnie jak poprzednio, utwórz tę docelową topologię aplikując nowy Blueprint do już istniejącego Deploymentu (uzyskanego w kroku 2). Zwróć uwagę na zmieniony sposób przekazania blueprintu do polecenia update. Sprawdź eksperymentalnie dlaczego poprzedni sposób by nie zadziałał; w celu ustalenia przyczyn warto przejrzeć informacje dostępne w pulpicie dashboard CLoudify dostępnym przez przeglądarke (dostęp do dashboard wg wytycznych z Ćwiczenia 1).
 ```
 cfy blueprint upload -b topology-final ./final-topology.yaml
 cfy deployments update topology-example -b topology-final
 ```
+### Sprawozdanie z ćwiczenia
+
+TBC
