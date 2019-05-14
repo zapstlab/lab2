@@ -1,4 +1,4 @@
-# Obiekty i relacje w Cloudify
+# ĆWICZENIE: Obiekty i relacje w Cloudify
 Celem tego ćwiczenia jest zapoznanie sie z tworzeniem bazowego blueprintu TOSCA dla Cloudify, w którym znajdziemy węzły oraz relacje między nimi. Ćwiczenie pokaże również w jaki sposób powiązać skrypty konfiguracyjne (w tym przypadku Python) z tworzonymi węzłami oraz relacjami. W ćwiczeniu tym, wykorzystując CLI cloudify wykonamy proces
 - wgrywania Blueprintu do Cloudify
 - tworzenie Deploymentu dla wgranego Blueprintu
