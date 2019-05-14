@@ -1,15 +1,15 @@
 # ĆWICZENIE: Obiekty i relacje w Cloudify
-Celem tego ćwiczenia jest zapoznanie sie z tworzeniem bazowego blueprintu TOSCA dla Cloudify, w którym znajdziemy węzły oraz relacje między nimi. Ćwiczenie pokaże również w jaki sposób powiązać skrypty konfiguracyjne (w tym przypadku Python) z tworzonymi węzłami oraz relacjami. W ćwiczeniu tym, wykorzystując CLI cloudify wykonamy proces
-- wgrywania Blueprintu do Cloudify
-- tworzenie Deploymentu dla wgranego Blueprintu
+Celem tego ćwiczenia jest zapoznanie się z tworzeniem bazowego blueprintu TOSCA dla Cloudify, w którym znajdziemy węzły (w rozumieniu TOSCA) oraz relacje między nimi. Ćwiczenie pokaże również w jaki sposób można powiązać skrypty konfiguracyjne (w tym przypadku napisane w języku Python) z tworzonymi węzłami oraz relacjami. W ćwiczeniu tym, wykorzystując CLI Cloudify, wykonamy proces obejmujący następujące kroki:
+- wgrawanie Blueprintu do Cloudify
+- utworzenie Deploymentu dla wgranego Blueprintu
 - przeglądanie listy węzłów TOSCA wchodzących w skład utworzonego deploymentu
-- urchamianie procesu instalacji przygotowanego wcześniej Deploymentu
+- urchomianie procesu instalacji przygotowanego wcześniej Deploymentu
 - przeglądanie listy zdarzeń powstałych w wyniku wykonania 
 - przeglądanie listy instancji węzłów TOSCA utworzonych w procesie instalacji deploymentu
 - aktualizowanie utworzonego wcześniej deploymentu
 - obserwacja zmian w instancjach węzłów i w zdarzeniach będących konsekwencją wykonanej aktualizacji Deploymentu
 
-Węzły i relacje TOSCA wykorzystywane w tym ćwiczeniu są powiązane ze skryptami konfiguracyjnymi Python. Celem tych skryptów jest logowania zmian ich cykly życia, co pozwala prześledzić sposób w jaki są one tworzone przez Cloudify. Umożliwia to również zapoznanie się z procesem powiązywania węzłów TOSCA ze skryptami konfiguracyjnymi.
+Węzły i relacje TOSCA wykorzystywane w tym ćwiczeniu są powiązane ze skryptami konfiguracyjnymi Python. Celem tych skryptów jest logowanie zmian cyklu poszczególnych składników Deploymentu (węzłów, relacji), co pozwala prześledzić sposób, w jaki są one tworzone i zarządzane przez Cloudify. Umożliwia to również zapoznanie się z procesem wiązania węzłów TOSCA ze skryptami konfiguracyjnymi (na przykładzie Python, jednak dobrze oddający ogólną istotę zagadnienia). Ten ostatni aspekt jest szczególnie istotny w przypadku orkiestracji powiązanej z rekonfiguracją koponentów usługowych, gdy typową (czasem jedyną) metodą rekonfiguracji jest właśnie wykonywanie procedur skryptoweych dostarczanych np. przez dostawców - muszą wówczas istnieć sposoby wiązania takich zewnętrznych skryptów z abstrakcyjnymi operacjami poziomu specyfikacji TOSCA.
 
 ```
 node_types:
