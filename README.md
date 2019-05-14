@@ -147,8 +147,9 @@ Zweryfikuj ponownie listę węzłów oraz ich instancji. W jaki sposób deployme
 
 W tym kroku utworzymy końcową wersję topologii. W tym celu samodzielnie przygotuj Blueprint final-topology.yaml, który posłuży do utworzenia następującej topologii:
 
-vRouter-1 <-> PublicNetwork <-> vLoadBalancer <-> InternalNetwork <-> vRouter-2 <-> ServiceNetwork <-> vAPP-Server-1 [vAPP-1-1, vAPP-1-2]
-                                                                                                   <-> vAPP-Server-2 [vAPP-2-1, vAPP-2-2]
+vRouter-1 <-> PublicNetwork <-> vLoadBalancer <-> InternalNetwork <-> vRouter-2 <-> ServiceNetwork <-> 
+          <-> vAPP-Server-1 [vAPP-1-1, vAPP-1-2]
+          <-> vAPP-Server-2 [vAPP-2-1, vAPP-2-2]
 
 Podpobnie jak poprzednio, utwórz tę docelową topologię aplikując nowy Blueprint do już istniejącego Deploymentu (uzyskanego w kroku 2). Zwróć uwagę na zmieniony sposób przekazania blueprintu do polecenia update. Sprawdź eksperymentalnie dlaczego poprzedni sposób by nie zadziałał; w celu ustalenia przyczyn warto przejrzeć 
 ```
