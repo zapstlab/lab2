@@ -128,7 +128,7 @@ cfy executions list -d topology-example
 cfy events list -e e4627d9a-9ba9-4d1c-a415-2b14e8fc76bc 
 ```
 
-Zwróć uwagę czym się różni node od node-instance. W dashboardzie Cloudify zweryfikuj wykonane powyżej kroki, przejrzyj utworzony i zainstalowany deployment oraz zapoznaj się z logami instalacji.
+Zwróć uwagę na to, czym się różni node od node-instance. W dashboardzie Cloudify zweryfikuj wykonane powyżej kroki, przejrzyj utworzony i zainstalowany deployment oraz zapoznaj się z logami instalacji.
 
 ### KROK 2: Utwórz rozszerzoną wersję topologii
 W tym kroku utworzymy rozszerzoną topologię
@@ -141,16 +141,16 @@ Na podstawie zdarzeń wykonania operacji aktualizacji deploymentu prześledź po
 cfy deployments update topology-example -p ./extended-topology.yaml
 ```
 
-Zweryfikuj ponownie listę węzłów oraz ich instancji. W jaki sposób deployment ten różni się od poprzedniego? Przesledź w zdarzeniach kolejność wykonywanych operacji na węzłach deploymentu podczas jego odinstalwania i ponownej instalacji.
+Zweryfikuj ponownie listę węzłów oraz ich instancji. W jaki sposób deployment ten różni się od poprzedniego - skomentuj krótko te różnice? Przesledź w zdarzeniach kolejność wykonywanych operacji na węzłach deploymentu podczas jego odinstalowania i ponownej instalacji (wykonaj tę sekwencję operacji/workflowów w ramach ćwiczenia).
 
-### KROK 3: Utwórz ostateczną wersję topologii
+### KROK 3: Utwórz docelową wersję topologii
 
-W tym kroku utworzymy końcową wersję topologii. W tym celu przygotuj Blueprint final-topology.yaml, który posłuży do utworzenia następujacej topologii
+W tym kroku utworzymy końcową wersję topologii. W tym celu samodzielnie przygotuj Blueprint final-topology.yaml, który posłuży do utworzenia następującej topologii:
 
 vRouter-1 <-> PublicNetwork <-> vLoadBalancer <-> InternalNetwork <-> vRouter-2 <-> ServiceNetwork <-> vAPP-Server-1 [vAPP-1-1, vAPP-1-2]
                                                                                                    <-> vAPP-Server-2 [vAPP-2-1, vAPP-2-2]
 
-Podpobnie jak poprzednio utwórz tę topologię poprzez modyfikacje poprzedniego Deploymentu. Zwróć uwagęna zmieniony sposób przekazania blueprintu do polecenia update. Zobacz dlaczego poprzedni sposób by nie zadziałał.
+Podpobnie jak poprzednio, utwórz tę docelową topologię aplikując nowy Blueprint do już istniejącego Deploymentu (uzyskanego w kroku 2). Zwróć uwagę na zmieniony sposób przekazania blueprintu do polecenia update. Sprawdź eksperymentalnie dlaczego poprzedni sposób by nie zadziałał; w celu ustalenia przyczyn warto przejrzeć 
 ```
 cfy blueprint upload -b topology-final ./final-topology.yaml
 cfy deployments update topology-example -b topology-final
