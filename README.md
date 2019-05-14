@@ -163,6 +163,6 @@ Podpobnie jak poprzednio, utwórz tę docelową topologię aplikując nowy Bluep
 cfy blueprint upload -b topology-final ./final-topology.yaml
 cfy deployments update topology-example -b topology-final
 ```
-### Sprawozdanie z ćwiczenia
+# Sprawozdanie z ćwiczenia
 
-TBC
+###TBC
