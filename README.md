@@ -153,7 +153,7 @@ W tym kroku utworzymy końcową wersję topologii. W tym celu samodzielnie przyg
 vRouter-1 <-> PublicNetwork <-> vLoadBalancer <-> InternalNetwork <-> vRouter-2 <-> ServiceNetwork: 
     <-> vAPP-Server-1 [vAPP-1-1, vAPP-1-2]
     <-> vAPP-Server-2 [vAPP-2-1, vAPP-2-2]
-(dwukropek : na końcu linii oznacza, że elementy poprzedzone <-> w kolejnych liniach pozostają w 
+(dwukropek : na końcu linii oznacza, że elementy poprzedzone symbolem <-> w kolejnych liniach pozostają w 
 bezpośredniej relacji TOSCA typu "connected_to" z ostatnim elementem linii z dwukropkiem - tutaj 
 serwery 1, 2 są dołączone do ServiceNetwork)
 ```
