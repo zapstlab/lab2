@@ -163,6 +163,8 @@ Podpobnie jak poprzednio, utwórz tę docelową topologię aplikując utworzony 
 cfy blueprint upload -b topology-final ./final-topology.yaml
 cfy deployments update topology-example -b topology-final
 ```
+Sprawdź konfigurację uzyskanego w ten sposób Deploymentu pod kątem zgodności z wymaganiami. W przypadku różnic wprowadź niezbędne poprawki do Blueprintu i zmodyfikuj Deploymwent ponownie.
+
 # Sprawozdanie z ćwiczenia
 
 ### TBC
