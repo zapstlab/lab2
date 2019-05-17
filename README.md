@@ -9,6 +9,8 @@ Celem tego ćwiczenia jest zapoznanie się z tworzeniem bazowego blueprintu TOSC
 - aktualizowanie utworzonego wcześniej deploymentu
 - obserwacja zmian w instancjach węzłów i w zdarzeniach będących konsekwencją wykonanej aktualizacji Deploymentu
 
+Niezależnie od CLI, w ćwiczeniu warto (i należy) korzystać również z pulpitu (Dashboard) Cloudify w celu graficznej weryfikacji przeprowadzanych operacji (operacje wykonywane w CLI można byłobyy również przeprowadzić z poziomu pulpitu). Sposób logowania się do dashboard Cloudify został opisany w ćwiczeniu 1.
+
 Węzły i relacje TOSCA wykorzystywane w tym ćwiczeniu są powiązane ze skryptami konfiguracyjnymi Python. Celem tych skryptów jest logowanie zmian cyklu poszczególnych składników Deploymentu (węzłów, relacji), co pozwala prześledzić sposób, w jaki są one tworzone i zarządzane przez Cloudify. Umożliwia to również zapoznanie się z procesem wiązania węzłów TOSCA ze skryptami konfiguracyjnymi (na przykładzie Python, jednak dobrze oddający ogólną istotę zagadnienia). Ten ostatni aspekt jest szczególnie istotny w przypadku orkiestracji powiązanej z rekonfiguracją koponentów usługowych, gdy typową (czasem jedyną) metodą rekonfiguracji jest właśnie wykonywanie procedur skryptoweych dostarczanych np. przez dostawców komponentrów usługowych - muszą wówczas istnieć sposoby wiązania takich zewnętrznych skryptów "wykonawczych" (faktycznie rekonfigurujących komponenty) z abstrakcyjnymi operacjami poziomu specyfikacji TOSCA (wyznaczającymi "punkty" przeprowadzania rekonfiguracji w abstrakcyjnym scenariuszu orkiestracyjnym).
 
 ```
