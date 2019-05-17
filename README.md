@@ -158,7 +158,7 @@ bezpośredniej relacji TOSCA typu "connected_to" z ostatnim elementem linii z dw
 serwery 1, 2 są dołączone do ServiceNetwork)
 ```
 
-Podpobnie jak poprzednio, utwórz tę docelową topologię aplikując utworzony przez Ciebie Blueprint do już istniejącego Deploymentu (uzyskanego w kroku 2). Zwróć uwagę na zmieniony sposób przekazania blueprintu do polecenia update. Sprawdź eksperymentalnie dlaczego poprzedni sposób by nie zadziałał; w celu ustalenia przyczyn warto przejrzeć informacje dostępne w pulpicie dashboard CLoudify dostępnym przez przeglądarkę (dostęp do dashboard wg wytycznych z Ćwiczenia 1).
+Podpobnie jak poprzednio, utwórz tę docelową topologię aplikując utworzony przez Ciebie Blueprint do już istniejącego Deploymentu (uzyskanego w kroku 2). Zwróć uwagę na zmieniony sposób przekazania blueprintu do polecenia update. Sprawdź eksperymentalnie dlaczego poprzedni sposób by nie zadziałał; w celu ustalenia przyczyn warto przejrzeć informacje dostępne w pulpicie (dashboard) Cloudify dostępnym przez przeglądarkę (dostęp do dashboard wg wytycznych z Ćwiczenia 1).
 ```
 cfy blueprint upload -b topology-final ./final-topology.yaml
 cfy deployments update topology-example -b topology-final
