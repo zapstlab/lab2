@@ -112,10 +112,10 @@ Typy węzłow TOSCA z pliku types.yaml umożliwiąją tworzenie prostych element
 - Application Module
 - Network
 
-# Przykłady blueprintów TOSCA
+# Opis ćwiczenia: blueprinty TOSCA i ich stosowanie
 
-### KROK 1: Utworz podstawową wersję topologii
-W tym kroku utworzymy podstawową topologię
+### KROK 1: Utwórz podstawową wersję topologii aplikacji
+W tym kroku utworzymy podstawową topologię naszej aplikacji, która wygląda jak poniżej:
 
 vRouter-1 <-> PublicNetwork
 
