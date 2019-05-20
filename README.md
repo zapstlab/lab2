@@ -167,6 +167,12 @@ cfy deployments update topology-example -b topology-final
 ```
 Sprawdź konfigurację uzyskanego w ten sposób Deploymentu pod kątem zgodności z wymaganiami. W przypadku różnic wprowadź niezbędne poprawki do Blueprintu i zmodyfikuj Deploymwent ponownie.
 
+### Krok 4: Proste skalowanie serwera
+
+W tym kroku ilustrujemy operację skalowania komponentu aplikacji na przykładzie serwera aplikacyjnego. W tym celu zmodyfikuj blueprint wprowadzając możliwość skalowania wybranego serwera aplikacyjnego (w blueprincie mamy dwa: vAPP-Server-1, 2), zmodyfikuj deployment korzystając z nowego blueprintu, a następnie korzystając z dasboardu Cloudify przeprowadź operacje skalowania w górę i skalowania w dół dla serwera aplikacyjnego przewidzialnego do skalowania. Podstawy skalowania w Cloudify są opisane pod tym linkiem: https://docs.cloudify.co/4.6/developer/blueprints/multiple-instances/.
+
+
 # Sprawozdanie z ćwiczenia
 
-### TBC
+Udokumentuj poszczególne kroki ćwiczenia (1-4), odpowiednie punkty sprawozdania opatrując stosownymi numerami.
+
