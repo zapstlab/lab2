@@ -176,5 +176,5 @@ UWAGA: W Cloudify istnieje możliwość definiowania w języku Python skryptów 
 
 # Sprawozdanie z ćwiczenia
 
-Udokumentuj poszczególne kroki ćwiczenia zachowując odpowiednią numeracje rozdziałów. W odrębnym punkcie podsumuj całe ćwiczenie.
+Udokumentuj poszczególne kroki ćwiczenia zachowując odpowiednią numerację rozdziałów. W odrębnym punkcie podsumuj całe ćwiczenie.
 
