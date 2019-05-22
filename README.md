@@ -169,9 +169,9 @@ Sprawdź konfigurację uzyskanego w ten sposób Deploymentu pod kątem zgodnośc
 
 ### Krok 4: Proste skalowanie serwera
 
-W tym kroku ilustrujemy operację skalowania komponentu aplikacji na przykładzie serwera aplikacyjnego. W tym celu zmodyfikuj blueprint wprowadzając możliwość skalowania wybranego serwera aplikacyjnego (w blueprincie mamy dwa: vAPP-Server-1, 2), zmodyfikuj deployment korzystając z nowego blueprintu, a następnie korzystając z dasboardu Cloudify przeprowadź operacje skalowania w górę i skalowania w dół dla serwera aplikacyjnego przewidzialnego do skalowania. Podstawy skalowania w Cloudify są opisane pod tym linkiem: https://docs.cloudify.co/4.6/developer/blueprints/multiple-instances/.
+W tym kroku ilustrujemy operację skalowania komponentu aplikacji na przykładzie serwera aplikacyjnego. W tym celu zmodyfikuj blueprint wprowadzając możliwość skalowania wybranego serwera aplikacyjnego (w blueprincie mamy dwa: vAPP-Server-1, 2), zmodyfikuj deployment korzystając z nowego blueprintu, a następnie korzystając z dasboardu Cloudify przeprowadź operacje skalowania w górę i skalowania w dół dla serwera aplikacyjnego przewidzialnego do skalowania. Podstawy skalowania w Cloudify są opisane pod tym linkiem: https://docs.cloudify.co/4.6/developer/blueprints/multiple-instances/. WSKAZÓWKA: skalując "w górę" z dashboard, w polach "exclude-instances" i "include-instances" należy wpisać symbol listy pustej [], gdyż pozostawienie tych pól niewypełnionych powoduje błąd wykonania (sygnalizowany mało oczywistym komunikatem o błędzie).
 
-UWAGA: W Cloudify istnieje możliwość definiowania w języku Python skryptów realizujących własne workflow-y służące do skalowania, jednak zadanie to wykracza poza ramy ćwiczeń laboratoryjnych. Zainteresowne osoby odsyłamy do dokumentacji Cloudify https://docs.cloudify.co/4.6/working_with/workflows/creating-your-own-workflow/.
+UWAGA: W Cloudify istnieje możliwość definiowania skryptów w języku Python realizujących własne workflow-y skalujące, jednak zadanie to wykracza poza ramy naszego ćwiczenia. Zainteresowne osoby odsyłamy do dokumentacji Cloudify https://docs.cloudify.co/4.6/working_with/workflows/creating-your-own-workflow/.
 
 
 # Sprawozdanie z ćwiczenia
