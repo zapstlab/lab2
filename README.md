@@ -187,5 +187,5 @@ UWAGA: W Cloudify istnieje możliwość definiowania skryptów w języku Python 
 
 Udokumentuj poszczególne kroki ćwiczenia zachowując odpowiednią numerację rozdziałów. W odrębnym punkcie podsumuj całe ćwiczenie.
 
-UWAGA: Ćwiczenie obejmuje wybrane, bardzo podstawowe zagadnienia związane z tworzeniem szablonów TOSCA. Oczywiście istnieje możliwość przeprowadzenia własnych prób na bazie pogłębionej analizy CLoudify. Takie nietrywialne i udokumentowane w sprawozdaniu próby będą honorowane uznaniowym bonusem punktowym w wysokości do 25% maksymalnej nominalnej oceny za ćwiczenie.
+UWAGA: Ćwiczenie obejmuje wybrane, bardzo podstawowe zagadnienia związane z tworzeniem szablonów TOSCA. Oczywiście istnieje możliwość przeprowadzenia własnych prób na bazie pogłębionej analizy Cloudify. Takie nietrywialne i udokumentowane w sprawozdaniu próby będą honorowane uznaniowym bonusem punktowym w wysokości do 25% maksymalnej nominalnej oceny za ćwiczenie.
 
