@@ -15,6 +15,8 @@ Celem tego ćwiczenia jest zapoznanie się z tworzeniem bazowego blueprintu TOSC
 
 Niezależnie od CLI, w ćwiczeniu warto (i należy) korzystać również z pulpitu (Dashboard) Cloudify w celu graficznej weryfikacji przeprowadzanych operacji (operacje wykonywane w CLI można byłobyy również przeprowadzić z poziomu pulpitu). Sposób logowania się do dashboard Cloudify został opisany w ćwiczeniu 1.
 
+UWAGA: Ćwiczenie obejmuje wybrane, bardzo podstawowe zagadnienia związane z tworzeniem szablonów TOSCA i tym samym niewielki wycinek udostępnianych przez Cloudify możliwości orkiestracyjnych. Oczywiście istnieje możliwość przeprowadzenia własnych prób dotyczących tworzenia szablonów i deploymentów na bazie pogłębionej analizy Cloudify. Takie nietrywialne i udokumentowane w sprawozdaniu próby będą honorowane uznaniowym bonusem punktowym w wysokości do 25% maksymalnej nominalnej oceny za ćwiczenie.
+
 ## TOSCA w naszym ćwiczeniu
 
 Węzły i relacje TOSCA wykorzystywane w tym ćwiczeniu są powiązane ze skryptami konfiguracyjnymi Python. Jedynym zadaniem tych skryptów jest logowanie zmian cyklu poszczególnych składników Deploymentu (węzłów, relacji). Pozwala to jednak prześledzić ogólny sposób, w jaki skrypty takie są tworzone, zamieszczane w blueprincie i zarządzane przez Cloudify. Umożliwia zatem zapoznanie się z procesem wiązania węzłów TOSCA ze skryptami konfiguracyjnymi (tutaj na przykładzie Python, jednak w sposób dobrze oddający ogólną istotę zagadnienia). Ten ostatni aspekt jest szczególnie istotny w przypadku orkiestracji powiązanej z rekonfiguracją koponentów usługowych, gdy typową (czasem jedyną) metodą rekonfiguracji jest właśnie wykonywanie procedur skryptoweych dostarczanych np. przez dostawców komponentrów usługowych - muszą wówczas istnieć sposoby wiązania takich zewnętrznych skryptów "wykonawczych" (faktycznie rekonfigurujących komponenty) z abstrakcyjnymi operacjami poziomu specyfikacji TOSCA (wyznaczającymi "punkty" przeprowadzania rekonfiguracji w abstrakcyjnym scenariuszu orkiestracyjnym).
@@ -186,6 +188,3 @@ UWAGA: W Cloudify istnieje możliwość definiowania skryptów w języku Python 
 # Sprawozdanie z ćwiczenia
 
 Udokumentuj poszczególne kroki ćwiczenia zachowując odpowiednią numerację rozdziałów. W odrębnym punkcie podsumuj całe ćwiczenie.
-
-UWAGA: Ćwiczenie obejmuje wybrane, bardzo podstawowe zagadnienia związane z tworzeniem szablonów TOSCA i tym samym niewielki wycinek udostępnianych przez Cloudify możliwości orkiestracyjnych. Oczywiście istnieje możliwość przeprowadzenia własnych prób na bazie pogłębionej analizy Cloudify. Takie nietrywialne i udokumentowane w sprawozdaniu próby będą honorowane uznaniowym bonusem punktowym w wysokości do 25% maksymalnej nominalnej oceny za ćwiczenie.
-
