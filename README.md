@@ -1,5 +1,9 @@
 # ĆWICZENIE: Obiekty i relacje w Cloudify
-Celem tego ćwiczenia jest zapoznanie się z tworzeniem bazowego blueprintu TOSCA dla Cloudify, w którym znajdziemy węzły (w rozumieniu TOSCA) oraz relacje między nimi. Ćwiczenie pokaże również w jaki sposób można powiązać skrypty konfiguracyjne (w tym przypadku napisane w języku Python) z tworzonymi węzłami oraz relacjami. W ćwiczeniu tym, wykorzystując CLI Cloudify, wykonamy proces obejmujący następujące kroki:
+
+### Wstęp
+
+Celem tego ćwiczenia jest zapoznanie się z tworzeniem bazowego blueprintu TOSCA dla Cloudify, w którym znajdziemy węzły (w rozumieniu TOSCA) oraz relacje między nimi. Pokażemy również w jaki sposób można powiązać skrypty konfiguracyjne (w tym przypadku napisane w języku Python) z tworzonymi węzłami oraz relacjami. W ćwiczeniu tym, wykorzystując CLI Cloudify, wykonamy proces obejmujący następujące kroki:
+
 - wgrywanie Blueprintu do Cloudify
 - utworzenie Deploymentu dla wgranego Blueprintu
 - przeglądanie listy węzłów TOSCA wchodzących w skład utworzonego deploymentu
@@ -10,6 +14,8 @@ Celem tego ćwiczenia jest zapoznanie się z tworzeniem bazowego blueprintu TOSC
 - obserwacja zmian w instancjach węzłów i w zdarzeniach będących konsekwencją wykonanej aktualizacji Deploymentu
 
 Niezależnie od CLI, w ćwiczeniu warto (i należy) korzystać również z pulpitu (Dashboard) Cloudify w celu graficznej weryfikacji przeprowadzanych operacji (operacje wykonywane w CLI można byłobyy również przeprowadzić z poziomu pulpitu). Sposób logowania się do dashboard Cloudify został opisany w ćwiczeniu 1.
+
+### TOSCA w naszym ćwiczeniu
 
 Węzły i relacje TOSCA wykorzystywane w tym ćwiczeniu są powiązane ze skryptami konfiguracyjnymi Python. Jedynym zadaniem tych skryptów jest logowanie zmian cyklu poszczególnych składników Deploymentu (węzłów, relacji). Pozwala to jednak prześledzić ogólny sposób, w jaki skrypty takie są tworzone, zamieszczane w blueprincie i zarządzane przez Cloudify. Umożliwia zatem zapoznanie się z procesem wiązania węzłów TOSCA ze skryptami konfiguracyjnymi (tutaj na przykładzie Python, jednak w sposób dobrze oddający ogólną istotę zagadnienia). Ten ostatni aspekt jest szczególnie istotny w przypadku orkiestracji powiązanej z rekonfiguracją koponentów usługowych, gdy typową (czasem jedyną) metodą rekonfiguracji jest właśnie wykonywanie procedur skryptoweych dostarczanych np. przez dostawców komponentrów usługowych - muszą wówczas istnieć sposoby wiązania takich zewnętrznych skryptów "wykonawczych" (faktycznie rekonfigurujących komponenty) z abstrakcyjnymi operacjami poziomu specyfikacji TOSCA (wyznaczającymi "punkty" przeprowadzania rekonfiguracji w abstrakcyjnym scenariuszu orkiestracyjnym).
 
@@ -106,6 +112,7 @@ relationships:
 
 ```
 Typy węzłow TOSCA z pliku types.yaml umożliwiąją tworzenie prostych elementów sieciowych oraz umożliwiają modelowanie relacji między nimi. Dziedziczą one z bazowych węzłów dostępnych w Cloudify, a umożliwiających definiowanie złożonych węzłów w Blueprincie. W szczególności przygotowany zestaw węzłów udostępnia takie węzły, jak:
+
 - Router
 - Load Balancer
 - Application Server
@@ -114,7 +121,7 @@ Typy węzłow TOSCA z pliku types.yaml umożliwiąją tworzenie prostych element
 
 WSKAZÓWKA: Niezależnie od użycia edytorów tekstowych czy przeglądarki dla github, w dashboardzie Cloudify można dość wygodnie przeglądać całą źródłową strukturę i poszczególne pliki blueprintu zaimportowanego już do Cloudify. Podgląd ten jest dostępny w dolnej części zakładki "Local Blueprints" (widać ją w liście po lewej stronie głównego okna konsoli).
 
-# Opis ćwiczenia: blueprinty TOSCA i ich stosowanie
+# Opis ćwiczenia
 
 ### KROK 1: Utwórz podstawową wersję topologii aplikacji
 W tym kroku utworzymy podstawową topologię naszej aplikacji, która wygląda jak poniżej:
