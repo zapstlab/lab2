@@ -128,7 +128,7 @@ W tym kroku utworzymy podstawową topologię naszej aplikacji, która wygląda j
 
 vRouter-1 <-> PublicNetwork
 
-Zapoznaj się z Blueprintem, węzłami TOSCA dla deploymentu, węzłami TOSCA dla utworzonej instalacji oraz ze zdarzeniami wygenerowanymi podczas procesu instalacji. Zwróć uwagę w jakiej kolejności wykonywane są operacje zmiany cyklu życia węzłów oraz relacji między nimi.
+Zapoznaj się z Blueprintem, węzłami TOSCA dla deploymentu, węzłami TOSCA dla utworzonej instalacji oraz ze zdarzeniami wygenerowanymi podczas procesu instalacji. Zwróć uwagę w jakiej kolejności wykonywane są operacje zmiany cyklu życia węzłów oraz relacji między nimi. Sekwencja działąń ujęta jest poniżej (pamiętaj, że identyfikatory poniżej mogą wymagać dostosowania do Twojego projektu; w szczególnościi dotyczy to identyfikatora "realizacji"/execution w poleceniu cfy events list -e <exceution_id>).
 
 ```
 cfy blueprint upload -b topology ./simple-topology.yaml
