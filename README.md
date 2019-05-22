@@ -105,12 +105,14 @@ relationships:
           executor: central_deployment_agent
 
 ```
-Typy węzłow TOSCA z pliku types.yaml umożliwiąją tworzenie prostych elementów sieciowych oraz umożliwiają modelowanie relacji między nimi. Dziedziczą one z bazowych węzłów dostepnych w Cloudify, a umożliwiających tworzenie złożonych węzłów zdefiniowanych w Blueprincie. W szczególności przygotowany zestaw węzłów udostepnia takie węzły jak
+Typy węzłow TOSCA z pliku types.yaml umożliwiąją tworzenie prostych elementów sieciowych oraz umożliwiają modelowanie relacji między nimi. Dziedziczą one z bazowych węzłów dostępnych w Cloudify, a umożliwiających definiowanie złożonych węzłów w Blueprincie. W szczególności przygotowany zestaw węzłów udostępnia takie węzły, jak:
 - Router
 - Load Balancer
 - Application Server
 - Application Module
 - Network
+
+WSKAZÓWKA: Niezależnie od użycia edytorów tekstowych czy przeglądarki do github, w dasboardzie Cloudify można dość wygodnie przeglądać całą źródłową strukturę i poszczególne pliki zaimportowanego już do Cloudify blueprintu w dolnej części zakładki "Local Blueprints" (widać ją w liście po lewej stronie głównego okna konsoli).
 
 # Opis ćwiczenia: blueprinty TOSCA i ich stosowanie
 
