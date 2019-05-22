@@ -1,6 +1,6 @@
 # ĆWICZENIE: Obiekty i relacje w Cloudify
 Celem tego ćwiczenia jest zapoznanie się z tworzeniem bazowego blueprintu TOSCA dla Cloudify, w którym znajdziemy węzły (w rozumieniu TOSCA) oraz relacje między nimi. Ćwiczenie pokaże również w jaki sposób można powiązać skrypty konfiguracyjne (w tym przypadku napisane w języku Python) z tworzonymi węzłami oraz relacjami. W ćwiczeniu tym, wykorzystując CLI Cloudify, wykonamy proces obejmujący następujące kroki:
-- wgrawanie Blueprintu do Cloudify
+- wgrywanie Blueprintu do Cloudify
 - utworzenie Deploymentu dla wgranego Blueprintu
 - przeglądanie listy węzłów TOSCA wchodzących w skład utworzonego deploymentu
 - urchomianie procesu instalacji przygotowanego wcześniej Deploymentu
@@ -112,7 +112,7 @@ Typy węzłow TOSCA z pliku types.yaml umożliwiąją tworzenie prostych element
 - Application Module
 - Network
 
-WSKAZÓWKA: Niezależnie od użycia edytorów tekstowych czy przeglądarki do github, w dasboardzie Cloudify można dość wygodnie przeglądać całą źródłową strukturę i poszczególne pliki zaimportowanego już do Cloudify blueprintu w dolnej części zakładki "Local Blueprints" (widać ją w liście po lewej stronie głównego okna konsoli).
+WSKAZÓWKA: Niezależnie od użycia edytorów tekstowych czy przeglądarki dla github, w dashboardzie Cloudify można dość wygodnie przeglądać całą źródłową strukturę i poszczególne pliki blueprintu zaimportowanego już do Cloudify. Podgląd ten jest dostępny w dolnej części zakładki "Local Blueprints" (widać ją w liście po lewej stronie głównego okna konsoli).
 
 # Opis ćwiczenia: blueprinty TOSCA i ich stosowanie
 
