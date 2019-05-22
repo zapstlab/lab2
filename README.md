@@ -169,16 +169,16 @@ bezpośredniej relacji TOSCA typu "connected_to" z ostatnim elementem linii z dw
 serwery 1, 2 są dołączone do ServiceNetwork)
 ```
 
-Podpobnie jak poprzednio, utwórz tę docelową topologię aplikując utworzony przez Ciebie Blueprint do już istniejącego Deploymentu (uzyskanego w kroku 2). Zwróć uwagę na zmieniony sposób przekazania blueprintu do polecenia update. Sprawdź eksperymentalnie dlaczego poprzedni sposób by nie zadziałał; w celu ustalenia przyczyn warto przejrzeć informacje dostępne w pulpicie (dashboard) Cloudify dostępnym przez przeglądarkę (dostęp do dashboard wg wytycznych z Ćwiczenia 1).
+Podpobnie jak poprzednio, utwórz tę docelową topologię aplikując utworzony przez Ciebie Blueprint do już istniejącego Deploymentu (uzyskanego w kroku 2). Zwróć uwagę na zmieniony sposób przekazania Blueprintu do polecenia update. Sprawdź eksperymentalnie dlaczego poprzedni sposób by nie zadziałał; w celu ustalenia przyczyn warto przejrzeć informacje dostępne w pulpicie (dashboard) Cloudify dostępnym przez przeglądarkę (dostęp do dashboard wg wytycznych z Ćwiczenia 1).
 ```
 cfy blueprint upload -b topology-final ./final-topology.yaml
 cfy deployments update topology-example -b topology-final
 ```
-Sprawdź konfigurację uzyskanego w ten sposób Deploymentu pod kątem zgodności z wymaganiami. W przypadku różnic wprowadź niezbędne poprawki do Blueprintu i zmodyfikuj Deploymwent ponownie.
+Sprawdź konfigurację uzyskanego w ten sposób Deploymentu pod kątem zgodności z wymaganiami. W przypadku różnic wprowadź niezbędne poprawki do Blueprintu i zmodyfikuj Deployment ponownie.
 
 ## Krok 4: Proste skalowanie serwera
 
-W tym kroku ilustrujemy operację skalowania komponentu aplikacji na przykładzie serwera aplikacyjnego. W tym celu zmodyfikuj blueprint wprowadzając możliwość skalowania wybranego serwera aplikacyjnego (w blueprincie mamy dwa szablony serwerowe: vAPP-Server-1, 2), zmodyfikuj deployment korzystając z nowego blueprintu, a następnie z dasboardu Cloudify przeprowadź operacje skalowania w górę i skalowania w dół dla serwera aplikacyjnego przewidzialnego do skalowania. Podstawy skalowania w Cloudify są opisane pod tym linkiem: https://docs.cloudify.co/4.6/developer/blueprints/multiple-instances/. WSKAZÓWKA: skalując "w górę" z dashboard, w polach "exclude-instances" i "include-instances" należy wpisać symbol listy pustej [], gdyż (skądinąd zgodne z intuicją) pozostawienie tych pól całkowicie niewypełnionych powoduje błąd wykonania (sygnalizowany mało oczywistym komunikatem o błędzie).
+W tym kroku ilustrujemy operację skalowania komponentu aplikacji na przykładzie serwera aplikacyjnego. W tym celu zmodyfikuj Blueprint wprowadzając możliwość skalowania wybranego serwera aplikacyjnego (w Blueprincie mamy dwa szablony serwerowe: vAPP-Server-1, 2), zmodyfikuj deployment korzystając z nowego blueprintu, a następnie z dasboardu Cloudify przeprowadź operacje skalowania w górę i skalowania w dół dla serwera aplikacyjnego przewidzialnego do skalowania. Podstawy skalowania w Cloudify są opisane pod tym linkiem: https://docs.cloudify.co/4.6/developer/blueprints/multiple-instances/. WSKAZÓWKA: skalując "w górę" z Dashboard, w polach "exclude-instances" i "include-instances" należy wpisać symbol listy pustej [], gdyż (skądinąd zgodne z intuicją) pozostawienie tych pól całkowicie niewypełnionych powoduje błąd wykonania (sygnalizowany mało oczywistym komunikatem o błędzie).
 
 UWAGA: W Cloudify istnieje możliwość definiowania skryptów w języku Python realizujących własne workflow-y skalujące, jednak zadanie to wykracza poza ramy naszego ćwiczenia. Zainteresowne osoby odsyłamy do dokumentacji Cloudify https://docs.cloudify.co/4.6/working_with/workflows/creating-your-own-workflow/.
 
@@ -186,4 +186,6 @@ UWAGA: W Cloudify istnieje możliwość definiowania skryptów w języku Python 
 # Sprawozdanie z ćwiczenia
 
 Udokumentuj poszczególne kroki ćwiczenia zachowując odpowiednią numerację rozdziałów. W odrębnym punkcie podsumuj całe ćwiczenie.
+
+UWAGA: Ćwiczenie obejmuje wybrane, bardzo podstawowe zagadnienia związane z tworzeniem szablonów TOSCA. Oczywiście istnieje możliwość przeprowadzenia własnych prób na bazie pogłębionej analizy CLoudify. Takie nietrywialne i udokumentowane w sprawozdaniu próby będą honorowane uznaniowym bonusem punktowym w wysokości do 25% maksymalnej nominalnej oceny za ćwiczenie.
 
