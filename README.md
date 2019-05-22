@@ -1,6 +1,6 @@
 # ĆWICZENIE: Obiekty i relacje w Cloudify
 
-### Wstęp
+## Wstęp
 
 Celem tego ćwiczenia jest zapoznanie się z tworzeniem bazowego blueprintu TOSCA dla Cloudify, w którym znajdziemy węzły (w rozumieniu TOSCA) oraz relacje między nimi. Pokażemy również w jaki sposób można powiązać skrypty konfiguracyjne (w tym przypadku napisane w języku Python) z tworzonymi węzłami oraz relacjami. W ćwiczeniu tym, wykorzystując CLI Cloudify, wykonamy proces obejmujący następujące kroki:
 
@@ -15,7 +15,7 @@ Celem tego ćwiczenia jest zapoznanie się z tworzeniem bazowego blueprintu TOSC
 
 Niezależnie od CLI, w ćwiczeniu warto (i należy) korzystać również z pulpitu (Dashboard) Cloudify w celu graficznej weryfikacji przeprowadzanych operacji (operacje wykonywane w CLI można byłobyy również przeprowadzić z poziomu pulpitu). Sposób logowania się do dashboard Cloudify został opisany w ćwiczeniu 1.
 
-### TOSCA w naszym ćwiczeniu
+## TOSCA w naszym ćwiczeniu
 
 Węzły i relacje TOSCA wykorzystywane w tym ćwiczeniu są powiązane ze skryptami konfiguracyjnymi Python. Jedynym zadaniem tych skryptów jest logowanie zmian cyklu poszczególnych składników Deploymentu (węzłów, relacji). Pozwala to jednak prześledzić ogólny sposób, w jaki skrypty takie są tworzone, zamieszczane w blueprincie i zarządzane przez Cloudify. Umożliwia zatem zapoznanie się z procesem wiązania węzłów TOSCA ze skryptami konfiguracyjnymi (tutaj na przykładzie Python, jednak w sposób dobrze oddający ogólną istotę zagadnienia). Ten ostatni aspekt jest szczególnie istotny w przypadku orkiestracji powiązanej z rekonfiguracją koponentów usługowych, gdy typową (czasem jedyną) metodą rekonfiguracji jest właśnie wykonywanie procedur skryptoweych dostarczanych np. przez dostawców komponentrów usługowych - muszą wówczas istnieć sposoby wiązania takich zewnętrznych skryptów "wykonawczych" (faktycznie rekonfigurujących komponenty) z abstrakcyjnymi operacjami poziomu specyfikacji TOSCA (wyznaczającymi "punkty" przeprowadzania rekonfiguracji w abstrakcyjnym scenariuszu orkiestracyjnym).
 
@@ -123,7 +123,7 @@ WSKAZÓWKA: Niezależnie od użycia edytorów tekstowych czy przeglądarki dla g
 
 # Opis ćwiczenia
 
-### KROK 1: Utwórz podstawową wersję topologii aplikacji
+## KROK 1: Utwórz podstawową wersję topologii aplikacji
 W tym kroku utworzymy podstawową topologię naszej aplikacji, która wygląda jak poniżej:
 
 vRouter-1 <-> PublicNetwork
@@ -142,7 +142,7 @@ cfy events list -e e4627d9a-9ba9-4d1c-a415-2b14e8fc76bc
 
 Zwróć uwagę na to, czym się różni node od node-instance. W dashboardzie Cloudify zweryfikuj wykonane powyżej kroki, przejrzyj utworzony i zainstalowany deployment oraz zapoznaj się z logami instalacji.
 
-### KROK 2: Utwórz rozszerzoną wersję topologii
+## KROK 2: Utwórz rozszerzoną wersję topologii
 W tym kroku utworzymy rozszerzoną topologię
 
 vRouter-1 <-> PublicNetwork <-> vAPP-Server-1 [vAPP-1-1, vAPP-1-2]
@@ -156,7 +156,7 @@ cfy deployments update topology-example -p ./extended-topology.yaml
 
 Zweryfikuj ponownie listę węzłów oraz ich instancji. W jaki sposób deployment ten różni się od poprzedniego? - skomentuj krótko te różnice. Przesledź w zdarzeniach kolejność wykonywanych operacji na węzłach deploymentu podczas jego odinstalowania i ponownej instalacji (wykonaj tę sekwencję operacji/workflow-ów w ramach ćwiczenia).
 
-### KROK 3: Utwórz docelową wersję topologii
+## KROK 3: Utwórz docelową wersję topologii
 
 W tym kroku utworzymy końcową wersję topologii. W tym celu samodzielnie przygotuj Blueprint o nazwie np. final-topology.yaml, który posłuży do utworzenia następującej topologii:
 
@@ -176,7 +176,7 @@ cfy deployments update topology-example -b topology-final
 ```
 Sprawdź konfigurację uzyskanego w ten sposób Deploymentu pod kątem zgodności z wymaganiami. W przypadku różnic wprowadź niezbędne poprawki do Blueprintu i zmodyfikuj Deploymwent ponownie.
 
-### Krok 4: Proste skalowanie serwera
+## Krok 4: Proste skalowanie serwera
 
 W tym kroku ilustrujemy operację skalowania komponentu aplikacji na przykładzie serwera aplikacyjnego. W tym celu zmodyfikuj blueprint wprowadzając możliwość skalowania wybranego serwera aplikacyjnego (w blueprincie mamy dwa szablony serwerowe: vAPP-Server-1, 2), zmodyfikuj deployment korzystając z nowego blueprintu, a następnie z dasboardu Cloudify przeprowadź operacje skalowania w górę i skalowania w dół dla serwera aplikacyjnego przewidzialnego do skalowania. Podstawy skalowania w Cloudify są opisane pod tym linkiem: https://docs.cloudify.co/4.6/developer/blueprints/multiple-instances/. WSKAZÓWKA: skalując "w górę" z dashboard, w polach "exclude-instances" i "include-instances" należy wpisać symbol listy pustej [], gdyż (skądinąd zgodne z intuicją) pozostawienie tych pól całkowicie niewypełnionych powoduje błąd wykonania (sygnalizowany mało oczywistym komunikatem o błędzie).
 
