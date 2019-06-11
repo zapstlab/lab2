@@ -142,7 +142,7 @@ cfy executions list -d topology-example
 cfy events list -e e4627d9a-9ba9-4d1c-a415-2b14e8fc76bc 
 ```
 
-Zwróć uwagę na to, czym się różni node od node-instance. W dashboardzie Cloudify zweryfikuj wykonane powyżej kroki, przejrzyj utworzony i zainstalowany deployment oraz zapoznaj się z logami instalacji. Na koniec przyjrzyj się dokładniej wynikowi zwracanemu komendą cfy node-instances list -d topology-example - zwróć uwagę na to, że korzystanie w Cloudify z określonego zewnętrznego systemu (w tym przypadku OpenStack) wymaga znajomości podstawowych konstrukcji tego zewnętrznego systemu (w naszym przypadku np. security_group, external_network, private_network, private_subnetwork, etc.), które mają swoje odpowiedniki na poziomie blueprintu i w obrębie depoymentu.
+Przeanalizuj różnice między node a node-instance. W dashboardzie Cloudify zweryfikuj wykonane powyżej kroki, przejrzyj utworzony i zainstalowany deployment oraz zapoznaj się z logami instalacji. Na koniec przyjrzyj się dokładniej wynikowi zwracanemu podaną wyżej komendą "cfy node-instances list -d topology-example": zwróć uwagę na to, że korzystanie w Cloudify z określonego zewnętrznego systemu (w tym przypadku OpenStack) wymaga znajomości podstawowych konstrukcji tego zewnętrznego systemu (w naszym przypadku np. security_group, external_network, private_network, private_subnetwork, etc.), które ostatecznie mają swoje odpowiedniki na poziomie blueprintu i w obrębie depoymentu.
 
 ## KROK 2: Utwórz rozszerzoną wersję topologii
 W tym kroku utworzymy rozszerzoną topologię
